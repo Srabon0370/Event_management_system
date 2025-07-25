@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,15 +88,25 @@ WSGI_APPLICATION = 'event_management.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Event_management',      
-        'USER': 'postgres',               
-        'PASSWORD': 'password', 
-        'HOST': 'localhost',              
-        'PORT': '5432',                  
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://event_manager_db_tdzx_user:SUkwp3MFErcbzGAr7xBZc1KVUdsBIsqb@dpg-d21s6h95pdvs738b113g-a.oregon-postgres.render.com/event_manager_db_tdzx',
+        conn_max_age=600
+    )
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Event_management',      
+#         'USER': 'postgres',               
+#         'PASSWORD': 'password', 
+#         'HOST': 'localhost',              
+#         'PORT': '5432',                  
+#     }
+# }
+
 
 
 # Password validation
