@@ -1,0 +1,21 @@
+{% extends 'events/base.html' %}
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">All Events</h1>
+<form method="get" action="{% url 'event-search' %}" class="mb-4">
+  <input type="text" name="q" placeholder="Search..." class="border p-2 rounded">
+  <button class="bg-blue-500 text-white px-4 py-2 ml-2 rounded">Search</button>
+</form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {% for event in events %}
+  <div class="bg-white p-4 shadow rounded">
+    <h2 class="text-xl font-semibold">{{ event.name }}</h2>
+    <p>{{ event.description }}</p>
+    <p>{{ event.date }} at {{ event.time }}</p>
+    <p>Location: {{ event.location }}</p>
+    <p>Category: {{ event.category.name }}</p>
+    <p>Participants: {{ event.participants.count }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+

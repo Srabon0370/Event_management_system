@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+<nav class="bg-green-600 p-4 text-white">
+    <a href="{% url 'dashboard' %}" class="mr-4">Dashboard</a>
+    <a href="{% url 'event-list' %}" class="mr-4">Events</a>
+    <a href="{% url 'event-create' %}" class="mr-4">Create Event</a>
+    <a href="{% url 'participant-create' %}" class="mr-4">Add Participant</a>
+    <a href="{% url 'category-create' %}" class="mr-4">Add Category</a>
+</nav>
+<div class="p-6">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>
