@@ -1,0 +1,12 @@
+{% extends "events/base.html" %}
+{% block content %}
+<div class="container">
+  <h2 class="font-bold text-3xl mb-3 text-center">Sign Up</h2>
+  <hr class="mb-3">
+  <form method="post" class="space-y-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="rounded bg-blue-500 text-white p-2">Sign Up</button>
+  </form>
+</div>
+{% endblock %}
