@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task_event'
+    'task_event',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'event_management.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://event_manager_db_tdzx_user:SUkwp3MFErcbzGAr7xBZc1KVUdsBIsqb@dpg-d21s6h95pdvs738b113g-a.oregon-postgres.render.com/event_manager_db_tdzx',
+        default='postgresql://event_manager_db_3c80_user:FbMHUr9DBLZ5hqNidqFm1yvJLRCRfXiS@dpg-d2m8o9h5pdvs73bh0a50-a.oregon-postgres.render.com/event_manager_db_3c80',
         conn_max_age=600
     )
 }
@@ -152,6 +153,5 @@ STATIC_FILES_DIR = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'event-list'
+
